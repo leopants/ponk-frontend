@@ -12,7 +12,7 @@ export default function LoginForm() {
         console.log(password);
         try {
             axios
-                .get("https:ponk-backend.herokuapp.com/checkuser", {
+                .get("https://ponk-backend.herokuapp.com/checkuser", {
                     params: {
                         usernameOrEmail: usernameOrEmail,
                         password: password,
@@ -44,7 +44,7 @@ export default function LoginForm() {
                                         <Form.Control
                                             value={usernameOrEmail}
                                             name="usernameOrEmail"
-                                            type="email"
+                                            type="text"
                                             placeholder="Enter username or email"
                                             onChange={(e) =>
                                                 setusernameOrEmail(
