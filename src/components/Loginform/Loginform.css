@@ -4,16 +4,23 @@ label {
 }
 form {
     align-content: center;
+    background-color: #d19487;
+    border-radius: 10px;
+}
+.loginText {
+    font-size: 30px;
 }
 button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
     padding: 5px 90px 5px 90px;
     color: white;
-    background-color: #0A84FF;
+    background-color: #0a84ff;
     border-radius: 5px;
-    border: solid 1px #0A84FF;
+    border: solid 1px #0a84ff;
 }
 input {
-    margin-left: 5px;
     border-radius: 5px;
     border: solid 1px #707070;
     justify-content: right;
