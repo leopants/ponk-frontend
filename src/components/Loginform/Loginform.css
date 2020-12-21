@@ -1,27 +1,33 @@
-label {
-    width: 375px;
-    display: inline-block;
+.loginDiv {
+    display: flex;
 }
 form {
     align-content: center;
-    background-color: #d19487;
-    border-radius: 10px;
+    background-color: hsla(11, 45%, 67%, 0.171);
+    border-radius: 3px;
+    margin-bottom: 10px;
+    padding-bottom: 5px;
+}
+.loginForm {
+    margin-bottom: 10px;
+    padding-bottom: 5px;
 }
 .loginText {
     font-size: 30px;
 }
-button {
+
+.loginButton {
     display: flex;
     justify-content: center;
     align-items: center;
-    padding: 5px 90px 5px 90px;
     color: white;
     background-color: #0a84ff;
-    border-radius: 5px;
+    border-radius: 3px;
     border: solid 1px #0a84ff;
 }
+
 input {
-    border-radius: 5px;
+    border-radius: 3px;
     border: solid 1px #707070;
     justify-content: right;
     display: inline-block;

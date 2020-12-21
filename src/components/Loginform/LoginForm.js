@@ -1,5 +1,6 @@
 import React from "react";
-import { Form, Button, Col, Row, Container } from "react-bootstrap";
+import { Form, Button, Col, Row, Container, InputGroup } from "react-bootstrap";
+import { PersonFill, KeyFill } from "react-bootstrap-icons";
 import "./Loginform.css";
 const axios = require("axios");
 
@@ -32,55 +33,74 @@ export default function LoginForm() {
     };
 
     return (
-        <div>
+        <div className="loginDiv">
             <Container fluid>
                 <Row>
-                    <Col sm={12}>
+                    <Col xs={12}>
                         <Form className="loginForm" onSubmit={handleSubmit}>
                             <h1 className="loginText">Login</h1>
                             <Row>
-                                <Col sm={{ span: 10, offset: 1 }}>
+                                <Col xs={{ span: 10, offset: 1 }}>
                                     <Form.Group controlId="formBasicEmail">
-                                        <Form.Control
-                                            value={usernameOrEmail}
-                                            name="usernameOrEmail"
-                                            type="text"
-                                            placeholder="Enter username or email"
-                                            onChange={(e) =>
-                                                setusernameOrEmail(
-                                                    e.target.value
-                                                )
-                                            }
-                                            required
-                                        />
+                                        <InputGroup>
+                                            <InputGroup.Prepend>
+                                                <InputGroup.Text>
+                                                    <PersonFill />
+                                                </InputGroup.Text>
+                                            </InputGroup.Prepend>
+                                            <Form.Control
+                                                value={usernameOrEmail}
+                                                name="usernameOrEmail"
+                                                type="text"
+                                                placeholder="Enter username or email"
+                                                onChange={(e) =>
+                                                    setusernameOrEmail(
+                                                        e.target.value
+                                                    )
+                                                }
+                                                required
+                                            />
+                                        </InputGroup>
                                     </Form.Group>
                                 </Col>
                             </Row>
                             <Row>
-                                <Col sm={{ span: 10, offset: 1 }}>
+                                <Col xs={{ span: 10, offset: 1 }}>
                                     <Form.Group controlId="formBasicPassword">
-                                        <Form.Control
-                                            name="password"
-                                            value={password}
-                                            type="password"
-                                            placeholder="Password"
-                                            onChange={(e) =>
-                                                setPassword(e.target.value)
-                                            }
-                                            required
-                                        />
+                                        <InputGroup>
+                                            <InputGroup.Prepend>
+                                                <InputGroup.Text>
+                                                    <KeyFill />
+                                                </InputGroup.Text>
+                                            </InputGroup.Prepend>
+                                            <Form.Control
+                                                name="password"
+                                                value={password}
+                                                type="password"
+                                                placeholder="Password"
+                                                onChange={(e) =>
+                                                    setPassword(e.target.value)
+                                                }
+                                                required
+                                            />
+                                        </InputGroup>
                                     </Form.Group>
                                 </Col>
                             </Row>
                             <Row>
-                                <Col sm={{ span: 10, offset: 1 }}>
-                                    <Button
-                                        className="loginButton"
-                                        variant="primary"
-                                        type="submit"
+                                <Col xs={{ span: 10, offset: 1 }}>
+                                    <Form.Group
+                                        style={{ alignItems: "center" }}
                                     >
-                                        Submit
-                                    </Button>
+                                        <Button
+                                            block
+                                            className="loginButton"
+                                            variant="primary"
+                                            type="submit"
+                                        >
+                                            Submit
+                                        </Button>
+                                    </Form.Group>
                                 </Col>
                             </Row>
                         </Form>
