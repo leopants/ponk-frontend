@@ -16,20 +16,27 @@ function App() {
                     </Col>
                 </Row>
                 <Row>
-                    <Col>
+                    <Col
+                        sm={{ span: 6, offset: 3 }}
+                        xs={{ span: 6, offset: 3 }}
+                    >
                         <Calltext />
                     </Col>
                 </Row>
                 <Row className="formRow">
                     <Col
-                        sm={{ span: 2, offset: 3 }}
-                        xs={{ span: 10, offset: 1 }}
+                        sm={{ span: 6, offset: 3 }}
+                        md={{ span: 6, offset: 3 }}
+                        lg={{ span: 3, offset: 3 }}
+                        xs={{ span: 8, offset: 2 }}
                     >
                         <LoginForm />
                     </Col>
                     <Col
-                        sm={{ span: 2, offset: 2 }}
-                        xs={{ span: 10, offset: 1 }}
+                        sm={{ span: 6, offset: 3 }}
+                        md={{ span: 6, offset: 3 }}
+                        lg={{ span: 3, offset: 0 }}
+                        xs={{ span: 8, offset: 2 }}
                     >
                         <SignupForm />
                     </Col>

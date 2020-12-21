@@ -1,5 +1,13 @@
 import React, { Component } from "react";
-import { Form, Button, Col, Row, Container } from "react-bootstrap";
+import { Form, Button, Col, Row, Container, InputGroup } from "react-bootstrap";
+import {
+    PersonFill,
+    Person,
+    KeyFill,
+    EnvelopeFill,
+    Key,
+    PersonCircle,
+} from "react-bootstrap-icons";
 import "./Signupform.css";
 const axios = require("axios");
 
@@ -41,86 +49,166 @@ export default function SignupForm() {
             <Container fluid>
                 <Row>
                     <Col sm={12}>
-                        <Form onSubmit={handleSubmit}>
+                        <Form className="signupForm" onSubmit={handleSubmit}>
                             <h1 className="signupText">SignUp</h1>
-                            <Form.Group controlId="formBasicEmail">
-                                <Form.Control
-                                    value={firstName}
-                                    name="firstName"
-                                    type="text"
-                                    placeholder="First Name"
-                                    onChange={(e) =>
-                                        setFirstName(e.target.value)
-                                    }
-                                    required
-                                />
-                            </Form.Group>
+                            <Row>
+                                <Col xs={{ span: 10, offset: 1 }}>
+                                    <Form.Group controlId="formBasicEmail">
+                                        <InputGroup>
+                                            <InputGroup.Prepend>
+                                                <InputGroup.Text>
+                                                    <Person />
+                                                </InputGroup.Text>
+                                            </InputGroup.Prepend>
+                                            <Form.Control
+                                                value={firstName}
+                                                name="firstName"
+                                                type="text"
+                                                placeholder="First Name"
+                                                onChange={(e) =>
+                                                    setFirstName(e.target.value)
+                                                }
+                                                required
+                                            />
+                                        </InputGroup>
+                                    </Form.Group>
+                                </Col>
+                            </Row>
 
-                            <Form.Group controlId="formBasicPassword">
-                                <Form.Control
-                                    name="lastName"
-                                    value={lastName}
-                                    type="text"
-                                    placeholder="Last Name"
-                                    onChange={(e) =>
-                                        setLastName(e.target.value)
-                                    }
-                                    required
-                                />
-                            </Form.Group>
+                            <Row>
+                                <Col xs={{ span: 10, offset: 1 }}>
+                                    <Form.Group controlId="formBasicPassword">
+                                        <InputGroup>
+                                            <InputGroup.Prepend>
+                                                <InputGroup.Text>
+                                                    <PersonFill />
+                                                </InputGroup.Text>
+                                            </InputGroup.Prepend>
+                                            <Form.Control
+                                                name="lastName"
+                                                value={lastName}
+                                                type="text"
+                                                placeholder="Last Name"
+                                                onChange={(e) =>
+                                                    setLastName(e.target.value)
+                                                }
+                                                required
+                                            />
+                                        </InputGroup>
+                                    </Form.Group>
+                                </Col>
+                            </Row>
 
-                            <Form.Group controlId="formBasicPassword">
-                                <Form.Control
-                                    name="email"
-                                    value={email}
-                                    type="email"
-                                    placeholder="Email"
-                                    onChange={(e) => setEmail(e.target.value)}
-                                    required
-                                />
-                            </Form.Group>
+                            <Row>
+                                <Col xs={{ span: 10, offset: 1 }}>
+                                    <Form.Group controlId="formBasicPassword">
+                                        <InputGroup>
+                                            <InputGroup.Prepend>
+                                                <InputGroup.Text>
+                                                    <EnvelopeFill />
+                                                </InputGroup.Text>
+                                            </InputGroup.Prepend>
+                                            <Form.Control
+                                                name="email"
+                                                value={email}
+                                                type="email"
+                                                placeholder="Email"
+                                                onChange={(e) =>
+                                                    setEmail(e.target.value)
+                                                }
+                                                required
+                                            />
+                                        </InputGroup>
+                                    </Form.Group>
+                                </Col>
+                            </Row>
 
-                            <Form.Group controlId="formBasicPassword">
-                                <Form.Control
-                                    name="username"
-                                    value={username}
-                                    type="text"
-                                    placeholder="Username"
-                                    onChange={(e) =>
-                                        setUsername(e.target.value)
-                                    }
-                                    required
-                                />
-                            </Form.Group>
+                            <Row>
+                                <Col xs={{ span: 10, offset: 1 }}>
+                                    <Form.Group controlId="formBasicPassword">
+                                        <InputGroup>
+                                            <InputGroup.Prepend>
+                                                <InputGroup.Text>
+                                                    <PersonCircle />
+                                                </InputGroup.Text>
+                                            </InputGroup.Prepend>
+                                            <Form.Control
+                                                name="username"
+                                                value={username}
+                                                type="text"
+                                                placeholder="Username"
+                                                onChange={(e) =>
+                                                    setUsername(e.target.value)
+                                                }
+                                                required
+                                            />
+                                        </InputGroup>
+                                    </Form.Group>
+                                </Col>
+                            </Row>
 
-                            <Form.Group controlId="formBasicPassword">
-                                <Form.Control
-                                    name="password"
-                                    value={password}
-                                    type="password"
-                                    placeholder="Password"
-                                    onChange={(e) =>
-                                        setPassword(e.target.value)
-                                    }
-                                    required
-                                />
-                            </Form.Group>
+                            <Row>
+                                <Col xs={{ span: 10, offset: 1 }}>
+                                    <Form.Group controlId="formBasicPassword">
+                                        <InputGroup>
+                                            <InputGroup.Prepend>
+                                                <InputGroup.Text>
+                                                    <Key />
+                                                </InputGroup.Text>
+                                            </InputGroup.Prepend>
+                                            <Form.Control
+                                                name="password"
+                                                value={password}
+                                                type="password"
+                                                placeholder="Password"
+                                                onChange={(e) =>
+                                                    setPassword(e.target.value)
+                                                }
+                                                required
+                                            />
+                                        </InputGroup>
+                                    </Form.Group>
+                                </Col>
+                            </Row>
 
-                            <Form.Group controlId="formBasicPassword">
-                                <Form.Control
-                                    name="password2"
-                                    value={password2}
-                                    type="password"
-                                    placeholder="Confirm Password"
-                                    onChange={(e) =>
-                                        setPassword2(e.target.value)
-                                    }
-                                    required
-                                />
-                            </Form.Group>
-                            <Button variant="primary" type="submit">
-                                Submit
-                            </Button>
+                            <Row>
+                                <Col xs={{ span: 10, offset: 1 }}>
+                                    <Form.Group controlId="formBasicPassword">
+                                        <InputGroup>
+                                            <InputGroup.Prepend>
+                                                <InputGroup.Text>
+                                                    <KeyFill />
+                                                </InputGroup.Text>
+                                            </InputGroup.Prepend>
+                                            <Form.Control
+                                                name="password2"
+                                                value={password2}
+                                                type="password"
+                                                placeholder="Confirm Password"
+                                                onChange={(e) =>
+                                                    setPassword2(e.target.value)
+                                                }
+                                                required
+                                            />
+                                        </InputGroup>
+                                    </Form.Group>
+                                </Col>
+                            </Row>
+
+                            <Row>
+                                <Col xs={{ span: 10, offset: 1 }}>
+                                    <Form.Group>
+                                        <Button
+                                            block
+                                            className="signupButton"
+                                            variant="primary"
+                                            type="submit"
+                                        >
+                                            Submit
+                                        </Button>
+                                    </Form.Group>
+                                </Col>
+                            </Row>
                         </Form>
                     </Col>
                 </Row>

@@ -1,3 +1,30 @@
 .signupText {
     font-size: 30px;
 }
+form {
+    align-content: center;
+    background-color: hsla(11, 45%, 67%, 0.171);
+    border-radius: 3px;
+    margin-bottom: 10px;
+    padding-bottom: 5px;
+}
+.signupForm {
+    margin-bottom: 10px;
+    padding-bottom: 5px;
+}
+input {
+    border-radius: 3px;
+    border: solid 1px #707070;
+    justify-content: right;
+    display: inline-block;
+}
+
+.signupButton {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    background-color: #0a84ff;
+    border-radius: 3px;
+    border: solid 1px #0a84ff;
+}

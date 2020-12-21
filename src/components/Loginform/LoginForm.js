@@ -1,6 +1,6 @@
 import React from "react";
 import { Form, Button, Col, Row, Container, InputGroup } from "react-bootstrap";
-import { PersonFill, KeyFill } from "react-bootstrap-icons";
+import { PersonFill, KeyFill, PersonCircle } from "react-bootstrap-icons";
 import "./Loginform.css";
 const axios = require("axios");
 
@@ -45,14 +45,14 @@ export default function LoginForm() {
                                         <InputGroup>
                                             <InputGroup.Prepend>
                                                 <InputGroup.Text>
-                                                    <PersonFill />
+                                                    <PersonCircle />
                                                 </InputGroup.Text>
                                             </InputGroup.Prepend>
                                             <Form.Control
                                                 value={usernameOrEmail}
                                                 name="usernameOrEmail"
                                                 type="text"
-                                                placeholder="Enter username or email"
+                                                placeholder="Username or email"
                                                 onChange={(e) =>
                                                     setusernameOrEmail(
                                                         e.target.value
