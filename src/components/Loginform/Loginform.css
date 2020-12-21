@@ -1,0 +1,21 @@
+label {
+    width: 375px;
+    display: inline-block;
+}
+form {
+    align-content: center;
+}
+button {
+    padding: 5px 90px 5px 90px;
+    color: white;
+    background-color: #0A84FF;
+    border-radius: 5px;
+    border: solid 1px #0A84FF;
+}
+input {
+    margin-left: 5px;
+    border-radius: 5px;
+    border: solid 1px #707070;
+    justify-content: right;
+    display: inline-block;
+}
