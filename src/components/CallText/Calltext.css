@@ -4,6 +4,8 @@ h1 {
     line-height: 136px;
     color: black;
     font-weight: 600;
+    margin: 0px;
+    padding: 0px;
 }
 p {
     align-content: center;
@@ -11,5 +13,6 @@ p {
     font-size: 20px;
     font-weight: 300;
     line-height: 46px;
-    margin: auto;
+    margin: 0px;
+    padding: 0px;
 }
