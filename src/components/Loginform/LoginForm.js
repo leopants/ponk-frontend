@@ -14,12 +14,15 @@ export default function LoginForm() {
     const handleSubmit = (event) => {
         try {
             axios
-                .get("https://ponk-backend.herokuapp.com/checkuser", {
-                    params: {
-                        usernameOrEmail: usernameOrEmail,
-                        password: password,
-                    },
-                })
+                .get(
+                    "https://ponk-backend-rbk23.ondigitalocean.app/checkuser",
+                    {
+                        params: {
+                            usernameOrEmail: usernameOrEmail,
+                            password: password,
+                        },
+                    }
+                )
                 .then(function (response) {
                     if (response.request.status == 200) {
                         console.log(response.data[0].firstName); //getting name from backend to interact with the user
