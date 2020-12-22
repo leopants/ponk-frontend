@@ -22,7 +22,7 @@ export default function SignupForm() {
     const handleSubmit = (event) => {
         if (password === password2) {
             axios
-                .post("https:ponk-backend.herokuapp.com/createuser", {
+                .post("https://ponk-backend.herokuapp.com/createuser", {
                     firstName: firstName,
                     lastName: lastName,
                     username: username,
