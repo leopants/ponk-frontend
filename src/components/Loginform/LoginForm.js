@@ -5,7 +5,7 @@ import { useHistory } from "react-router-dom";
 import "./Loginform.css";
 const axios = require("axios");
 
-export default function LoginForm() {
+export default function LoginForm(props) {
     const [usernameOrEmail, setusernameOrEmail] = React.useState("");
     const [password, setPassword] = React.useState("");
     const [loginError, setLoginError] = React.useState(false);
@@ -26,6 +26,7 @@ export default function LoginForm() {
                 .then(function (response) {
                     if (response.request.status == 200) {
                         console.log(response.data[0].firstName); //getting name from backend to interact with the user
+                        props.callback(response.data[0].firstName);
                         history.push("/dashboard"); //redirect to dashboard if log in successful
                     }
                 })

@@ -12,7 +12,7 @@ import { useHistory } from "react-router-dom";
 import "./Signupform.css";
 const axios = require("axios");
 
-export default function SignupForm() {
+export default function SignupForm(props) {
     const [email, setEmail] = React.useState("");
     const [password, setPassword] = React.useState("");
     const [username, setUsername] = React.useState("");
@@ -27,18 +27,16 @@ export default function SignupForm() {
     const handleSubmit = (event) => {
         if (password === password2) {
             axios
-                .post(
-                    "https://ponk-backend-rbk23.ondigitalocean.app/createuser",
-                    {
-                        firstName: firstName,
-                        lastName: lastName,
-                        username: username,
-                        email: email,
-                        password: password,
-                    }
-                )
+                .post("https://ponk-backend.herokuapp.com/createuser", {
+                    firstName: firstName,
+                    lastName: lastName,
+                    username: username,
+                    email: email,
+                    password: password,
+                })
                 .then(function (response) {
                     console.log(response.request.status);
+                    props.callback(firstName);
                     history.push("/dashboard");
                 })
                 .catch(function (error) {
