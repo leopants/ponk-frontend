@@ -8,6 +8,7 @@ import {
     Key,
     PersonCircle,
 } from "react-bootstrap-icons";
+import { useHistory } from "react-router-dom";
 import "./Signupform.css";
 const axios = require("axios");
 
@@ -18,6 +19,10 @@ export default function SignupForm() {
     const [firstName, setFirstName] = React.useState("");
     const [lastName, setLastName] = React.useState("");
     const [password2, setPassword2] = React.useState("");
+    const [emailError, setEmailError] = React.useState(false);
+    const [usernameError, setUsernameError] = React.useState(false);
+    const [passwordError, setPasswordError] = React.useState(false);
+    const history = useHistory();
 
     const handleSubmit = (event) => {
         if (password === password2) {
@@ -31,11 +36,16 @@ export default function SignupForm() {
                 })
                 .then(function (response) {
                     console.log(response.request.status);
+                    history.push("/dashboard");
                 })
                 .catch(function (error) {
                     if (error.response) {
                         // Request made and server responded
-                        alert(error.response.data);
+                        if (error.response.data === "Username is taken") {
+                            setUsernameError(true);
+                        } else if (error.response.data === "Email is taken") {
+                            setEmailError(true);
+                        }
                     } else if (error.request) {
                         // The request was made but no response was received
                         console.log(error.request);
@@ -45,7 +55,7 @@ export default function SignupForm() {
                     }
                 });
         } else {
-            alert("Passwords do not match");
+            setPasswordError(true);
         }
         setEmail("");
         setPassword("");
@@ -130,6 +140,11 @@ export default function SignupForm() {
                                                 }
                                                 required
                                             />
+                                            {emailError === true && (
+                                                <p className="errorEmail">
+                                                    Your email is taken.
+                                                </p>
+                                            )}
                                         </InputGroup>
                                     </Form.Group>
                                 </Col>
@@ -154,6 +169,11 @@ export default function SignupForm() {
                                                 }
                                                 required
                                             />
+                                            {usernameError === true && (
+                                                <p className="errorUsername">
+                                                    Your username is taken.
+                                                </p>
+                                            )}
                                         </InputGroup>
                                     </Form.Group>
                                 </Col>
@@ -202,6 +222,11 @@ export default function SignupForm() {
                                                 }
                                                 required
                                             />
+                                            {passwordError === true && (
+                                                <p className="errorPassword">
+                                                    Your password must match.
+                                                </p>
+                                            )}
                                         </InputGroup>
                                     </Form.Group>
                                 </Col>
