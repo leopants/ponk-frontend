@@ -27,7 +27,13 @@ form {
     border-radius: 3px;
     border: solid 1px #0a84ff;
 }
-
+.errorP {
+    color: red;
+    font-size: 15px;
+    margin: 0px;
+    line-height: 20px;
+    padding-top: 10px;
+}
 input {
     border-radius: 3px;
     border: solid 1px #707070;

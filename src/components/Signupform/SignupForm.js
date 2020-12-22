@@ -1,4 +1,4 @@
-import React, { Component } from "react";
+import React from "react";
 import { Form, Button, Col, Row, Container, InputGroup } from "react-bootstrap";
 import {
     PersonFill,
@@ -20,7 +20,7 @@ export default function SignupForm() {
     const [password2, setPassword2] = React.useState("");
 
     const handleSubmit = (event) => {
-        if (password == password2) {
+        if (password === password2) {
             axios
                 .post("https:ponk-backend.herokuapp.com/createuser", {
                     firstName: firstName,
@@ -31,6 +31,18 @@ export default function SignupForm() {
                 })
                 .then(function (response) {
                     console.log(response.request.status);
+                })
+                .catch(function (error) {
+                    if (error.response) {
+                        // Request made and server responded
+                        alert(error.response.data);
+                    } else if (error.request) {
+                        // The request was made but no response was received
+                        console.log(error.request);
+                    } else {
+                        // Something happened in setting up the request that triggered an Error
+                        console.log("Error", error.message);
+                    }
                 });
         } else {
             alert("Passwords do not match");
@@ -53,7 +65,7 @@ export default function SignupForm() {
                             <h1 className="signupText">SignUp</h1>
                             <Row>
                                 <Col xs={{ span: 10, offset: 1 }}>
-                                    <Form.Group controlId="formBasicEmail">
+                                    <Form.Group controlId="formFirstName">
                                         <InputGroup>
                                             <InputGroup.Prepend>
                                                 <InputGroup.Text>
@@ -77,7 +89,7 @@ export default function SignupForm() {
 
                             <Row>
                                 <Col xs={{ span: 10, offset: 1 }}>
-                                    <Form.Group controlId="formBasicPassword">
+                                    <Form.Group controlId="formLastName">
                                         <InputGroup>
                                             <InputGroup.Prepend>
                                                 <InputGroup.Text>
@@ -101,7 +113,7 @@ export default function SignupForm() {
 
                             <Row>
                                 <Col xs={{ span: 10, offset: 1 }}>
-                                    <Form.Group controlId="formBasicPassword">
+                                    <Form.Group controlId="formSignupEmail">
                                         <InputGroup>
                                             <InputGroup.Prepend>
                                                 <InputGroup.Text>
@@ -125,7 +137,7 @@ export default function SignupForm() {
 
                             <Row>
                                 <Col xs={{ span: 10, offset: 1 }}>
-                                    <Form.Group controlId="formBasicPassword">
+                                    <Form.Group controlId="formBasicUsername">
                                         <InputGroup>
                                             <InputGroup.Prepend>
                                                 <InputGroup.Text>
@@ -149,7 +161,7 @@ export default function SignupForm() {
 
                             <Row>
                                 <Col xs={{ span: 10, offset: 1 }}>
-                                    <Form.Group controlId="formBasicPassword">
+                                    <Form.Group controlId="formSignupPassword">
                                         <InputGroup>
                                             <InputGroup.Prepend>
                                                 <InputGroup.Text>
@@ -173,7 +185,7 @@ export default function SignupForm() {
 
                             <Row>
                                 <Col xs={{ span: 10, offset: 1 }}>
-                                    <Form.Group controlId="formBasicPassword">
+                                    <Form.Group controlId="formPasswordVerify">
                                         <InputGroup>
                                             <InputGroup.Prepend>
                                                 <InputGroup.Text>
